@@ -95,7 +95,7 @@ function newBike()
 
     $newBike[] = Bike::create("standardbike.jpg", "images/standardbike.jpg", "Standard Bike", 40, "Scott or Avanti mountain bike<br>
                               29er Aluminium alloy frame
-                              27spd Shimano Alivio or Acera
+                              27spd Shimano Alivio or Acera<br>
                               Front suspension fork (sprung) RockShox XC28 or Suntour XCM<br>
                               Hydraulic Disc brake Shimano M395<br>
                               Weight 15kg<br>
