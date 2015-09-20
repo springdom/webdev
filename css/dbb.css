@@ -1,0 +1,42 @@
+.ui-title {
+    margin: 0.6em 10% 0.8em !important;
+}
+#include {
+    text-align:center;
+    font-size:12px;
+}
+#mainContent {
+    color:white;
+    font-family: Verdana, Helvetica, sans-serif;
+    text-align:center;
+}
+#footer {
+    height:25px;
+    margin-top:50px;
+}
+td:first-child {
+    display: none;
+}
+P {
+    text-align:center;
+    color:white;
+    font-size:16px;
+}
+h2 {
+    text-transform:uppercase;
+    text-align:center;
+    font-family: Verdana, Helvetica, serif;
+    font-size:12px;
+}
+h1{
+    color:white;
+    font-family: Verdana, Helvetica, serif;
+    text-align:center;
+}
+p
+{
+    font-family: Verdana, Helvetica, sans-serif;
+}
+input[type="radio"]{
+    display:none;
+}

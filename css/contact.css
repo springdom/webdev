@@ -1,0 +1,15 @@
+.ui-page {
+    background: #00ABE3;
+}
+#logowrap {
+    position:sticky;
+    text-align:center;
+    padding:10px;
+}
+#mainContent {
+    text-align:center;
+    color:white;
+}
+#footer {
+    height:25px;
+}

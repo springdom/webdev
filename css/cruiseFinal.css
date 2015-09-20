@@ -1,0 +1,27 @@
+.ui-page {
+    background: #00ABE3;
+}
+#footer {
+    height:25px;
+}
+p
+{
+    font-family: Verdana, Helvetica, sans-serif;
+    color:black;
+    font-size:20px;
+    margin-left:20px;
+    margin-bottom: -15px;
+}
+.col
+{
+    color:red;
+    margin-bottom: 0px;
+}
+h1{
+    text-align:center;
+    font-family: Verdana, Helvetica, sans-serif;
+}
+h3{
+    font-family: Verdana, Helvetica, sans-serif;
+    text-align:center;
+}

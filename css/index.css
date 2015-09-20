@@ -1,0 +1,17 @@
+.ui-page {
+    background: #00ABE3;
+}
+#logowrap {
+    position:relative;
+    text-align:center;
+    padding:10px;
+}
+#mainContent1 {
+    text-transform:uppercase;
+    font-family: Verdana, Helvetica, sans-serif;
+}
+#mainContent h1, li {
+    text-align: center;
+    font-family: Verdana,Helvetica,serif;
+}
+

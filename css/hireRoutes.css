@@ -1,0 +1,67 @@
+.ui-page {
+    background: #00ABE3;
+}
+#logowrap {
+    position:sticky;
+    text-align:center;
+    padding:10px;
+}
+#mainContent {
+    color:white;
+    font-family: Verdana, Helvetica, sans-serif;
+}
+P {
+    text-align:center;
+    color:white;
+}
+.box-title {
+    width:auto;
+    text-transform:uppercase;
+    height:auto;
+    padding-top:3px;
+    margin-bottom:8px;
+    background-color:#000;
+    float:none;
+    position:relative;
+    text-align:left;
+    font-weight:bold;
+}
+.box-route {
+    width:auto;
+    height:auto;
+    background-color:#00abe3;
+    box-shadow:7px 7px #333;
+    margin-top:-10px;
+    padding-bottom:40px;
+}
+#box-title-ship {
+    width:480px;
+    text-transform:uppercase;
+    height:20px;
+    padding-top:3px;
+    margin-bottom:8px;
+    background-color:#000;
+    float:right;
+    position:relative;
+    text-align:left;
+    font-weight:bold;
+}
+#box-right-ship {
+    float:right;
+    width:100px;
+    height:98px;
+    background-color:#000;
+    margin-top:-8px;
+}
+h1 {
+    text-align:center;
+    text-transform:uppercase;
+    color:white;
+    font-family: Verdana, Helvetica, serif;
+}
+.ui-page {
+    background: #00ABE3;
+}
+#footer {
+    height:25px;
+}

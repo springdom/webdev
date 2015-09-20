@@ -1,0 +1,210 @@
+body {
+    background: #00ABE3 !important;
+}
+li {
+    list-style: none
+}
+span.glyphicon-info-sign {
+    font-size: 1.2em;
+}
+input[readonly="readonly"] {
+    background-color: white;
+}
+h1 {
+    color: white;
+    text-align: center;
+}
+p {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-family: Verdana, Helvetica, sans-serif;
+}
+ul a {
+    color: #FFF !important;
+}
+.popa {
+    color: #FFF !important;
+}
+#header {
+    background-color: #004B63;
+    border-bottom: 3px solid;
+    border-bottom-color: white;
+    padding-top: 5px;
+}
+#_Date,
+#_EDate,
+#_Time,
+#_ETime,
+span.glyphicon-info-sign,
+img {
+    cursor: pointer;
+}
+#mainContent {
+    color: white;
+    text-align: center;
+}
+#form {
+    background-color: rgb(15, 117, 150);
+    padding-top: 15px;
+}
+#NHDinfo {
+    display: block;
+    padding-top: 20px;
+    background-color: #0F7596;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+#bgStyling {
+    padding-top: 20px;
+    background-color: #0F7596;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin-top: 0px;
+}
+#RiderAdd {
+    background-color: #00ABE3;
+    margin-left: 26.5%;
+    margin-right: 26%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#log {
+    border-bottom: 4px solid;
+    border-top: 4px solid;
+    padding-bottom: 10px;
+}
+#Delivlog {
+    border-bottom: 4px solid;
+}
+#ModImg {
+    position: absolute;
+    left: -11%;
+    top: -6%;
+}
+#footer {
+    height: 25px;
+    margin-top: 50px;
+}
+.error {
+    color: red !important;
+    display: block;
+}
+.top-buffer {
+    margin-top: 15px;
+}
+.popover-content {
+    color: black;
+}
+.CustA:hover {
+    color: #004B63;
+}
+#clue {
+    clear: both;
+    width: 100%;
+}
+.posV {
+    position: fixed;
+    float: right;
+    margin-left: 78%;
+}
+@media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 480px) {
+        /* Styles */
+        .posV {
+            margin-left: 65%;
+            top: 57%;
+        }
+    }
+/*todo:fix other screens*/
+/* Smartphones (landscape) ----------- */
+@media only screen
+    and (min-width : 400px) {
+        /* Styles */
+        .posV {
+            margin-left: 79%;
+            top: 57%;
+        }
+}
+
+/* Smartphones (portrait) ----------- /
+@media only screen
+    and (max-width : 320px) {
+        /* Styles /
+        .posV {
+            margin-left: 10%;
+            top: 57%;
+        }
+    }*/
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px) {
+        /* Styles */
+        .posV {
+            margin-left: 10%;
+        }
+    }
+
+/* iPads (landscape) ----------- */
+@media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
+    and (orientation : landscape) {
+        /* Styles */
+        .posV {
+            margin-left: 50%;
+        }
+    }
+
+/* iPads (portrait) ----------- */
+@media only screen
+    and (min-device-width : 768px)
+    and (max-device-width : 1024px)
+    and (orientation : portrait) {
+        /* Styles */
+        .posV {
+            margin-left: 50%;
+        }
+    }
+
+/* Desktops and laptops ----------- */
+@media only screen
+    and (min-width : 1224px) {
+        /* Styles */
+        .posV {
+            margin-left: 78%;
+            top: 57%;
+        }
+    }
+
+/* Large screens ----------- */
+@media only screen
+    and (min-width : 1824px) {
+        /* Styles */
+        .posV {
+            margin-left: 78%;
+            top: 57%;
+        }
+    }
+
+/* iPhone 4 ----------- */
+@media
+    only screen and (-webkit-min-device-pixel-ratio : 1.5),
+    only screen and (min-device-pixel-ratio : 1.5) {
+        /* Styles */
+        .posV {
+            margin-left: 65%;
+            top: 57%;
+        }
+    }

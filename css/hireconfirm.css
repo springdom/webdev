@@ -1,0 +1,25 @@
+p {
+    color: inherit !important;
+}
+h1{
+    color: white !important;
+}
+#ModImg{
+    position: absolute;
+    left: -11%;
+    top: -6%;
+}
+#MainDetails {
+    background-color: rgb(15, 117, 150);
+    padding-top: 15px;
+}
+#footer {
+    height: 25px;
+    margin-top: 50px;
+}
+.top-buffer {
+    margin-top: 15px;
+}
+.CustA:hover{
+    color: #004B63;
+}

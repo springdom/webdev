@@ -1,0 +1,73 @@
+.panel{
+    border:none !important;
+}
+.panelEdit{
+    background: black !important;
+    color: white !important;
+    text-transform: uppercase;
+    font-family: Verdana,Helvetica,sans-serif;
+}
+.panelBodyEdit
+{
+    background: #0F7596 !important;
+    border: 0px;
+    padding: 0px !important;
+}
+.quik{
+
+}
+.ui-page {
+    background: #00ABE3;
+}
+#logowrap {
+    position:sticky;
+    text-align:center;
+    padding:10px;
+}
+P {
+    text-align:center;
+    color:white;
+}
+#mainContent {
+    color:white;
+    font-family: Verdana, Helvetica, sans-serif;
+}
+.box-title {
+    width:auto;
+    text-transform:uppercase;
+    height:auto;
+    padding-top:3px;
+    margin-bottom:8px;
+    float:none;
+    background-color:black;
+    position:relative;
+    font-weight:bold;
+}
+#box-title-ship {
+    width:480px;
+    text-transform:uppercase;
+    height:20px;
+    padding-top:3px;
+    margin-bottom:8px;
+    background-color:#000;
+    float:right;
+    position:relative;
+    text-align:left;
+    font-weight:bold;
+}
+#box-right-ship {
+    float:right;
+    width:100px;
+    height:95px;
+    background-color:#000;
+    margin-top:-8px;
+}
+h1 {
+    text-align:center;
+    text-transform:uppercase;
+    color:white;
+    font-family: Verdana, Helvetica, serif;
+}
+#footer {
+    height:25px;
+}

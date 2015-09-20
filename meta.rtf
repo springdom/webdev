@@ -1,0 +1,58 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf400
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red217\green11\blue0;\red255\green39\blue18;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww15420\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qj
+
+\f0\fs28 \cf0 This document is a record of the "Developing Academic English" app.\
+\
+The purpose of this document is to list all the functions, global variables, etc... and their\
+purpose, in the hopes that this will make bug fixing much easier.\
+\
+**************************************   GLOBAL VARIABLES:   *************************************\
+\
+\cf2 currentCourse:\cf0 \
+\
+Records the current course element. This refers the the div ID of the current screen being displayed.\
+\
+\cf2 progress7_X:\
+\
+\cf0 Records the specific pages visited from each section of the app in order to calculate the progress bar widths.\
+\
+\cf2 overallProgress:\cf0 \
+\
+Number referring to the overall pages visited by the user.\
+\
+\cf2 popupLock:\cf0 \
+\
+Boolean variable specifying if a popup is active. Also used with the swipe mechanism. Acts as a semaphore / lock\
+to stop multiple actions being detected from one touch gesture. \
+\
+\cf2 fadePagesID:\cf0 \
+\
+A record of which pages need to be faded to / from.\
+\
+\cf3 pagesProgress7_1:\cf0 \
+\
+Array version of the progress7_X variables.\
+\
+\cf2 numberPages7_X:\cf0 \
+\
+Represents the number of screens in a given section.\
+\
+\cf2 pagesVisited:\cf0 \
+\
+Records the pages visited by the user. Can be set by cookie and is updated whenever a user changes page.\
+\
+\cf2 firstVisit:\cf0 \
+\
+Used to determine if this is the first visit to the home page. If it is, the delay for progress bar updating is disabled.\
+\
+\cf2 buttonsPressed:\cf0 \
+\
+Records the buttons which have been pressed by the user so that if they leave, they can be turned purple again.\
+\
+\
+*****************************************   FUNCTIONS:   *****************************************\
+\
+}

@@ -1,0 +1,25 @@
+.ui-page {
+    background: #00ABE3;
+}
+#footer {
+    height:25px;
+}
+#mainContent{
+    color:white;
+    font-family: Verdana, Helvetica, sans-serif;
+}
+h1{
+    color:white;
+    font-family: Verdana, Helvetica, serif;
+    text-align:center;
+}
+p
+{
+    text-align: center;
+    color:white;
+    font-family: Verdana, Helvetica, serif;
+    font-size:15px;
+}
+label{
+    text-align:center;
+}
