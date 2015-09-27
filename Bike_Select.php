@@ -91,6 +91,12 @@ function bikeClass()
 }
 function newBike()
 {
+    include '/DBPOP/connect.inc.php';
+$database = "ibike";
+$db = mysql_select_db($database, $connection) or die("Couldn't select database");
+$count1= 0;
+     $selectStatement = "SELECT * FROM bikes";
+    $result = mysql_query($selectStatement) or  die("Couldn't connect:" .mysql_error());
     $newBike = array();
 
     $newBike[] = Bike::create("standardbike.jpg", "images/standardbike.jpg", "Standard Bike", 40, "Scott or Avanti mountain bike<br>
@@ -128,17 +134,19 @@ function newBike()
     echo ("<form id='form' class='row form-inline top-buffer' role='form'>
         <div id='MainBikes'>");
 
-    foreach ($newBike as $obj) {
-        $count++;
-    echo ("<div class='col-md-3'>
-    <div class='bikeContent' id='bikeContent_{$count}'>
-    <label id='bikeOpt2_{$count}'  class='bikeOpt2'>
-    <input type='radio' id='bikeOpt_{$count}'  value='$obj->bikeName' name='bikeSelec' class='BikeInput img-rounded'>
-    <img src='$obj->img' width='200' alt='$obj->bikeName'>
+    while($row = mysql_fetch_array($result))
+    {
+        $count1++;
+
+        echo ("<div class='col-md-3'>
+    <div class='bikeContent' id='bikeContent_{$count1}'>
+    <label id='bikeOpt2_{$count1}'  class='bikeOpt2'>
+    <input type='radio' id='bikeOpt_{$count1}'  value='". $row['Bike_Price'] ."' name='bikeSelec' class='BikeInput img-rounded'>
+    <img src=images/". $row['Bike_Img'] . " width='200' alt='" . $row['Bike_Name'] . "'>
     </label>
     </div>
-    <div class='bikeName'><h5><u><b>$obj->bikeName $$obj->price/day</b></u></h5></div>");
-    echo ("<div class='descrp' id='description_{$count}'><small>$obj->descr</small></div>
+    <div class='bikeName'><h5><u><b>" . $row['Bike_Name'] . " $" .$row['Bike_Price'] . "/day</b></u></h5></div>");
+    echo ("<div class='descrp' id='description_{$count1}'><small>" . $row['Bike_Descr'] . "</small></div>
     </div>");
     }
     echo ("</div>
