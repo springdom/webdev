@@ -40,6 +40,11 @@ session_start();
 
             </div><!-- /header -->
             <div class="container" id="mainContent">
+                    <div id="myDiv"></div>
+                <!--TEST-->
+                <div id="output">
+                <h1></h1>
+                </div> 
                 <form autocomplete="off" id='formDetails'  class ="row" role="form" action='Hire_Confirm.php' method='post'>
                     <h3>Contact Details For This Hire</h3>
                     <div class="form-group col-md-4">
@@ -64,72 +69,20 @@ session_start();
                 </form>
                 <div class="Bikes">
 <?php
-function bikeClass()
-{
-    class Bike
-    {
-        public $name;
-        public $img;
-        public $bikeName;
-        public $price;
-        public $descr;
 
-        private function Bike($name, $img, $bikeName, $price, $descr)
-        {
-
-            $this->name     = $name;
-            $this->img      = $img;
-            $this->bikeName = $bikeName;
-            $this->price    = $price;
-            $this->descr    = $descr;
-        }
-        public static function create($name, $img, $bikeName, $price, $descr)
-        {
-            return new Bike($name, $img, $bikeName, $price, $descr);
-        }
-    }
-}
 function newBike()
 {
     include '/DBPOP/connect.inc.php';
 $database = "ibike";
 $db = mysql_select_db($database, $connection) or die("Couldn't select database");
+    
+    
 $count1= 0;
      $selectStatement = "SELECT * FROM bikes";
     $result = mysql_query($selectStatement) or  die("Couldn't connect:" .mysql_error());
-    $newBike = array();
 
-    $newBike[] = Bike::create("standardbike.jpg", "images/standardbike.jpg", "Standard Bike", 40, "Scott or Avanti mountain bike<br>
-                              29er Aluminium alloy frame
-                              27spd Shimano Alivio or Acera<br>
-                              Front suspension fork (sprung) RockShox XC28 or Suntour XCM<br>
-                              Hydraulic Disc brake Shimano M395<br>
-                              Weight 15kg<br>
-                              Suits Riders(150-200)");
-
-    $newBike[] = Bike::create("electricbike.jpg", "images/electricbike.jpg", "Electric Bike", 80, "Pedal and throttle power assist
-        <br>70-100km battery range<br>
-        Powerful 36V12Ah battery<br>
-        Front rear lights<br>
-        Low step thru frame<br>
-        Charger supplied with multi-day hires<br>");
-
-    $newBike[] = Bike::create("fullsuspension.jpg", "images/fullsuspension.jpg", "Full Suspension Bike", 75, "Hammerhead
-                              29er Aluminium alloy frame<br>
-                              2x10spd SRAM X5/X7 groupset<br>
-                              Rockshox Pike 140mm fork<br>
-                              Fox CTD Kashima Rear Shock<br>
-                              Shimano Deore hydraulic brakes<br>
-                              SRAM Roam 30 wheels<br>
-                              Weight 14kg");
-
-    $newBike[] = Bike::create("kidsbicycle.jpg", "images/kidsbicycle.jpg", "Kids Bike", 30, "Avanti
-                              24” childs bike<br>
-                              3spd internal<br>
-                              Alloy V-brake front, Pedal brake rear<br>
-                              Suit riders 3’10”-4’8”(117cm-145cm)");
     $count= 0;
-
+    $CurBike=0;
 
     echo ("<form id='form' class='row form-inline top-buffer' role='form'>
         <div id='MainBikes'>");
@@ -141,7 +94,7 @@ $count1= 0;
         echo ("<div class='col-md-3'>
     <div class='bikeContent' id='bikeContent_{$count1}'>
     <label id='bikeOpt2_{$count1}'  class='bikeOpt2'>
-    <input type='radio' id='bikeOpt_{$count1}'  value='". $row['Bike_Price'] ."' name='bikeSelec' class='BikeInput img-rounded'>
+    <input type='radio' id='bikeOpt_{$count1}'  value='". $row['Bike_Name'] ."' name='bikeSelec' class='BikeInput img-rounded'>
     <img src=images/". $row['Bike_Img'] . " width='200' alt='" . $row['Bike_Name'] . "'>
     </label>
     </div>
@@ -154,7 +107,6 @@ $count1= 0;
 }
 function runBike()
 {
-    bikeClass();
     newBike();
 }
 runBike();

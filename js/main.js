@@ -77,6 +77,23 @@ $(function() {
             },
         }
     });
+    $.ajax({                                      
+      url: 'DBPOP/display.php',                  //the script to call to get data          
+      data: "",                        //you can insert url argumnets here to pass to api.php
+                                       //for example "id=5&parent=6"
+      dataType: 'json',                //data format      
+      success: function(data)          //on recieve of reply
+      {
+        var id = data[0];              //get id
+        var vname = data[1];           //get name
+        //--------------------------------------------------------------------
+        // 3) Update html content
+        //--------------------------------------------------------------------
+        $('#output').html("<b>id: </b>"+id+"<b> name: </b>"+vname); //Set output element html
+        //recommend reading up on jquery selectors they are awesome 
+        // http://api.jquery.com/category/selectors/
+      } 
+    });
 });
 //clear datepicker if not empty
 $("#_Date").change(function() {
@@ -189,7 +206,6 @@ $("#AddRider").click(function() {
         });
 
         //get each bike and update price on selec //future:look into this
-        //FUTURE:Change to Constructor
         $('input[type=radio][name="bikeSelec"]:checked').each(function() {
             if (realArray[0].NumOfDays == 0.5) {
                 switch ($(this).val()) {
@@ -417,6 +433,11 @@ $("#AddRiderDone").click(function() {
         $("#NHDinfo").remove();
     }
 });
+//Divide by 2 on half days
+function halfDay()
+{
+    
+}
 var ExtraVal2 = 0;
 var ExtraString2 = "";
 
