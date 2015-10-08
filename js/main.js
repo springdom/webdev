@@ -14,8 +14,20 @@ var count = 0,
 
 var attrs = ['id'];
 var currentdate = new Date();
+var url = 'DBPOP/display.php';
+
 
 $(document).ready(function() {
+   //test ajax
+    $.getJSON(url, function (data) {
+        $.each(data, function (index, data) {
+            $('#tablebody').append('<tr>');
+            $('#tablebody').append('<td>' + data.Name + '</td>');
+            $('#tablebody').append('<td>' + data.Price + '</td>');
+            $('#tablebody').append('</tr>');
+        });
+    });
+
 //form setup
     $("#bikeOpt2_" + 1).prop("checked", true);
     $("#PriceTot").hide();
@@ -76,23 +88,6 @@ $(function() {
                 validChar: true,
             },
         }
-    });
-    $.ajax({                                      
-      url: 'DBPOP/display.php',                  //the script to call to get data          
-      data: "",                        //you can insert url argumnets here to pass to api.php
-                                       //for example "id=5&parent=6"
-      dataType: 'json',                //data format      
-      success: function(data)          //on recieve of reply
-      {
-        var id = data[0];              //get id
-        var vname = data[1];           //get name
-        //--------------------------------------------------------------------
-        // 3) Update html content
-        //--------------------------------------------------------------------
-        $('#output').html("<b>id: </b>"+id+"<b> name: </b>"+vname); //Set output element html
-        //recommend reading up on jquery selectors they are awesome 
-        // http://api.jquery.com/category/selectors/
-      } 
     });
 });
 //clear datepicker if not empty
