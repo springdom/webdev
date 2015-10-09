@@ -14,19 +14,20 @@ var count = 0,
 
 var attrs = ['id'];
 var currentdate = new Date();
+
 var url = 'DBPOP/display.php';
+var BikeData;
+var BikePrice;
 
 
 $(document).ready(function() {
+
    //test ajax
     $.getJSON(url, function (data) {
-        $.each(data, function (index, data) {
-            $('#tablebody').append('<tr>');
-            $('#tablebody').append('<td>' + data.Name + '</td>');
-            $('#tablebody').append('<td>' + data.Price + '</td>');
-            $('#tablebody').append('</tr>');
-        });
+        BikeData = data;
     });
+
+//test ajax end
 
 //form setup
     $("#bikeOpt2_" + 1).prop("checked", true);
@@ -203,35 +204,42 @@ $("#AddRider").click(function() {
         //get each bike and update price on selec //future:look into this
         $('input[type=radio][name="bikeSelec"]:checked').each(function() {
             if (realArray[0].NumOfDays == 0.5) {
-                switch ($(this).val()) {
-                    case "Standard Bike":
-                        PriceVal = 30;
-                        break;
-                    case "Full Suspension Bike":
-                        PriceVal = 50;
-                        break
-                    case "Electric Bike":
-                        PriceVal = 60;
-                        break;
-                    case "Kids Bike":
-                        PriceVal = 35;
-                        break;
-                }
+
+                //MODIFY HERE
+//                switch ($(this).val()) {
+//                    case "Standard Bike":
+//                        PriceVal = 30;
+//                        break;
+//                    case "Full Suspension Bike":
+//                        PriceVal = 50;
+//                        break
+//                    case "Electric Bike":
+//                        PriceVal = 60;
+//                        break;
+//                    case "Kids Bike":
+//                        PriceVal = 35;
+//                        break;
+//                }
+                //MODIFY END
+
             } else {
-                switch ($(this).val()) {
-                    case "Standard Bike":
-                        PriceVal = 40;
-                        break;
-                    case "Full Suspension Bike":
-                        PriceVal = 75;
-                        break
-                    case "Electric Bike":
-                        PriceVal = 80;
-                        break;
-                    case "Kids Bike":
-                        PriceVal = 35;
-                        break;
-                }
+                BikeName($(this).val());
+                //MODIFY HERE
+//                switch ($(this).val()) {
+//                    case "Standard Bike":
+//                        PriceVal = 40;
+//                        break;
+//                    case "Full Suspension Bike":
+//                        PriceVal = 75;
+//                        break
+//                    case "Electric Bike":
+//                        PriceVal = 80;
+//                        break;
+//                    case "Kids Bike":
+//                        PriceVal = 35;
+//                        break;
+//                }
+                //MODIFY END
             }
             switch ($("#Extras").val()) {
                 case "":
@@ -263,6 +271,7 @@ $("#AddRider").click(function() {
             realArray[0].Extras = ExtraString;
             realArray[0].ExtrasPrice = ExtraVal;
 
+
             realArray.push({
                 'Name': $("#_Name00").val(),
                 'Height': $("#_Height00").val(),
@@ -270,7 +279,7 @@ $("#AddRider").click(function() {
                 'Price': PriceVal,
             });
         });
-        //console.log(realArray);
+        console.log(realArray);
         TotalPrice();
         populateHandles()
         $("#NHDinfo").remove();
@@ -355,6 +364,8 @@ $("#AddRiderDone").click(function() {
         //future:look into this
         $('input[type=radio][name="bikeSelec"]:checked').each(function() {
             if (realArray[0].NumOfDays == 0.5) {
+
+                //MODIFY HERE
                 switch ($(this).val()) {
                     case "Standard Bike":
                         PriceVal = 30;
@@ -369,21 +380,27 @@ $("#AddRiderDone").click(function() {
                         PriceVal = 35;
                         break;
                 }
+                //MODIFY END
+
             } else {
-                switch ($(this).val()) {
-                    case "Standard Bike":
-                        PriceVal = 40;
-                        break;
-                    case "Full Suspension Bike":
-                        PriceVal = 75;
-                        break
-                    case "Electric Bike":
-                        PriceVal = 80;
-                        break;
-                    case "Kids Bike":
-                        PriceVal = 35;
-                        break;
-                }
+                BikeName($(this).val());
+                console.log($(this).val());
+                //MODIFY HERE
+//                switch ($(this).val()) {
+//                    case "Standard Bike":
+//                        PriceVal = 40;
+//                        break;
+//                    case "Full Suspension Bike":
+//                        PriceVal = 75;
+//                        break
+//                    case "Electric Bike":
+//                        PriceVal = 80;
+//                        break;
+//                    case "Kids Bike":
+//                        PriceVal = 35;
+//                        break;
+//                }
+                //MODIFY END
             }
             switch ($("#Extras").val()) {
                 case "":
@@ -1029,4 +1046,18 @@ function TotalPrice() {
 
     $("#_price").val(total.toFixed(2))
     $('#Tprice').html("$" + total.toFixed(2));
+}
+
+//New
+
+function BikeName(getBike)
+{
+
+        $.each(BikeData, function (index, data) {
+//            console.log(BikeData);
+            if(data.Name == getBike)
+            {
+               PriceVal = data.Price;
+            }
+        });
 }

@@ -45,10 +45,8 @@ session_start();
   <caption>Population of Districts of Nepal 2013</caption>
   <thead>
    <tr>
-    <th>District</th>
-    <th>Male Population</th>
-    <th>Female Population</th>
-    <th>Total Population</th>
+    <th>Name</th>
+    <th>Price</th>
    </tr>
   </thead>
   <tbody id="tablebody">
