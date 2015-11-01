@@ -15,7 +15,7 @@ var count = 0,
 var attrs = ['id'];
 var currentdate = new Date();
 
-var url = 'DBPOP/display.php';
+var url = 'Json/bikedata.json';
 var BikeData;
 var BikePrice;
 
@@ -23,10 +23,20 @@ var BikePrice;
 $(document).ready(function() {
 
    //test ajax
-    $.getJSON(url, function (data) {
-        BikeData = data;
-    });
-
+   $.getJSON(url,{ }, function (data) {
+       BikeData = data.bikes;
+       console.log(data);
+   }).fail(function (jqXHR, textStatus, errorThrown) {
+       console.log("fail " + errorThrown);
+   });
+//    $.getJSON(url, { },function (data) {
+//            BikeData = data;
+//            console.log(data);
+//        }
+//        .error(function (xhr) {
+//            alert(xhr)
+//        })
+//    );
 //test ajax end
 
 //form setup

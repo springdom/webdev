@@ -1,36 +1,28 @@
-[{
-    "Name": "Standard Bike",
-    "Descr": "Scott or Avanti mountain bike<br>\r\n
-    29e r Aluminium alloy frame\ r\ n 27 spd Shimano Alivio or Acera < br > \r\ n
-    Front suspension fork(sprung) RockShox XC28 or Suntour XCM < br > \r\ n
-    Hydraulic Disc brake Shimano M395 < br > \r\ n Weight
-    15 kg < br > \r\ n Suits Riders(150 - 200)
-    ","
-    Image ":"
-    standardbike.jpg ","
-    Price ": "40.00"
-}, {
-    "Name": "Kids Bike",
-    "Descr": "Avanti 24\u201d childs bike 3spd internal Alloy V-brake front,
-    Pedal brake rear Suit riders 3\ u201910\ u201d - 4\ u20198\ u201d(117 cm - 145 cm)
-    ","
-    Image ":"
-    kidsbicycle.jpg ",
-    "Price": "30.00"
-}, {
-    "Name": "Full Suspension Bike",
-    "Descr": "Hammerhead 29er Aluminium alloy frame 2x10spd
-    SRAM X5\ / X7 groupset Rockshox Pike 140 mm fork Fox CTD Kashima Rear Shock Shimano Deore hydraulic brakes
-    SRAM Roam 30 wheels Weight 14 kg ","
-    Image ":"
-    fullsuspension.jpg ","
-    Price ":"
-    75.00 "},{"
-    Name ":"
-    Electric Bike ",
-    "Descr": "Pedal and throttle power assist 70-100km battery range Powerful 36V12Ah battery Front rear
-    lights Low step thru frame Charger supplied with multi - day hires ","
-    Image ":"
-    electricbike.jpg ","
-    Price ": "80.00"
-}]
+{
+    "bikes": [
+        {
+            "Name": "Standard Bike",
+            "Descr": "Scott or Avanti mountain bike<br>29e r Aluminium alloy frame 27 spd Shimano Alivio or Acera<br>Front suspension fork(sprung) RockShox XC28 or Suntour XCM<br>Hydraulic Disc brake Shimano M395 <br> Weight 15 kg <br>Suits Riders(150 - 200)",
+            "Image": "standardbike.jpg",
+            "Price": "40.00"
+        },
+        {
+            "Name": "Kids Bike",
+            "Descr": "Avanti 24” childs bike 3spd internal Alloy V-brake front, Pedal brake rear Suit riders(117 cm - 145 cm)",
+            "Image": "kidsbicycle.jpg",
+            "Price": "30.00"
+        },
+        {
+            "Name": "Full Suspension Bike",
+            "Descr": "Hammerhead 29er Aluminium alloy frame 2x10spd SRAM X5 X7 groupset Rockshox Pike 140 mm fork Fox CTD Kashima Rear Shock Shimano Deore hydraulic brakes SRAM Roam 30 wheels Weight 14 kg",
+            "Image": "fullsuspension.jpg ",
+            "Price": "75.00"
+        },
+        {
+            "Name": "Electric Bike ",
+            "Descr": "Pedal and throttle power assist 70-100km battery range Powerful 36V12Ah battery Front rear lights Low step thru frame Charger supplied with multi - day hires ",
+            "Image": "electricbike.jpg ",
+            "Price": "80.00"
+        }
+    ]
+}
