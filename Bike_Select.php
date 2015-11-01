@@ -40,7 +40,7 @@ session_start();
 
             </div><!-- /header -->
             <div class="container" id="mainContent">
-<!--                TEST DIV-->
+<!--                TEST DIV
                 <div id="testdiv"><table class="table table-striped">
   <caption>Population of Districts of Nepal 2013</caption>
   <thead>
@@ -52,7 +52,7 @@ session_start();
   <tbody id="tablebody">
   </tbody>
  </table></div>
-                <!--                TEST DIV-->
+                            TEST DIV-->
                     <div id="myDiv"></div>
                 <!--TEST-->
                 <div id="output">
