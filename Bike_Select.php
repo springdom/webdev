@@ -85,13 +85,17 @@ session_start();
 
 function newBike()
 {
+    $json_url = "Json/bikedata.json";
+    $json = file_get_contents($json_url);
+    $links = json_decode($json, TRUE);
+
     include '/DBPOP/connect.inc.php';
-$database = "ibike";
-$db = mysql_select_db($database, $connection) or die("Couldn't select database");
+    $database = "ibike";
+    $db = mysql_select_db($database, $connection) or die("Couldn't select database");
     
     
-$count1= 0;
-     $selectStatement = "SELECT * FROM bikes";
+    $count1= 0;
+    $selectStatement = "SELECT * FROM bikes";
     $result = mysql_query($selectStatement) or  die("Couldn't connect:" .mysql_error());
 
     $count= 0;
@@ -100,19 +104,19 @@ $count1= 0;
     echo ("<form id='form' class='row form-inline top-buffer' role='form'>
         <div id='MainBikes'>");
 
-    while($row = mysql_fetch_array($result))
+     foreach($links['bikes'] as $key=>$val)
     {
         $count1++;
 
         echo ("<div class='col-md-3'>
     <div class='bikeContent' id='bikeContent_{$count1}'>
     <label id='bikeOpt2_{$count1}'  class='bikeOpt2'>
-    <input type='radio' id='bikeOpt_{$count1}'  value='". $row['Bike_Name'] ."' name='bikeSelec' class='BikeInput img-rounded'>
-    <img src=images/". $row['Bike_Img'] . " width='200' alt='" . $row['Bike_Name'] . "'>
+    <input type='radio' id='bikeOpt_{$count1}'  value='". $val['Name'] ."' name='bikeSelec' class='BikeInput img-rounded'>
+    <img src=images/". $val['Image'] . " width='200' alt='" . $val['Name'] . "'>
     </label>
     </div>
-    <div class='bikeName'><h5><u><b>" . $row['Bike_Name'] . " $" .$row['Bike_Price'] . "/day</b></u></h5></div>");
-    echo ("<div class='descrp' id='description_{$count1}'><small>" . $row['Bike_Descr'] . "</small></div>
+    <div class='bikeName'><h5><u><b>" . $val['Name'] . " $" .$val['Price'] . "/day</b></u></h5></div>");
+    echo ("<div class='descrp' id='description_{$count1}'><small>" . $val['Descr'] . "</small></div>
     </div>");
     }
     echo ("</div>
