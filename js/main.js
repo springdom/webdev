@@ -29,14 +29,6 @@ $(document).ready(function() {
    }).fail(function (jqXHR, textStatus, errorThrown) {
        console.log("fail " + errorThrown);
    });
-//    $.getJSON(url, { },function (data) {
-//            BikeData = data;
-//            console.log(data);
-//        }
-//        .error(function (xhr) {
-//            alert(xhr)
-//        })
-//    );
 //test ajax end
 
 //form setup
@@ -214,42 +206,11 @@ $("#AddRider").click(function() {
         //get each bike and update price on selec //future:look into this
         $('input[type=radio][name="bikeSelec"]:checked').each(function() {
             if (realArray[0].NumOfDays == 0.5) {
-
-                //MODIFY HERE
-//                switch ($(this).val()) {
-//                    case "Standard Bike":
-//                        PriceVal = 30;
-//                        break;
-//                    case "Full Suspension Bike":
-//                        PriceVal = 50;
-//                        break
-//                    case "Electric Bike":
-//                        PriceVal = 60;
-//                        break;
-//                    case "Kids Bike":
-//                        PriceVal = 35;
-//                        break;
-//                }
-                //MODIFY END
-
-            } else {
+                //get price of bike
                 BikeName($(this).val());
-                //MODIFY HERE
-//                switch ($(this).val()) {
-//                    case "Standard Bike":
-//                        PriceVal = 40;
-//                        break;
-//                    case "Full Suspension Bike":
-//                        PriceVal = 75;
-//                        break
-//                    case "Electric Bike":
-//                        PriceVal = 80;
-//                        break;
-//                    case "Kids Bike":
-//                        PriceVal = 35;
-//                        break;
-//                }
-                //MODIFY END
+            } else {
+                //get price of bike
+                BikeName($(this).val());
             }
             switch ($("#Extras").val()) {
                 case "":
@@ -374,43 +335,9 @@ $("#AddRiderDone").click(function() {
         //future:look into this
         $('input[type=radio][name="bikeSelec"]:checked').each(function() {
             if (realArray[0].NumOfDays == 0.5) {
-
-                //MODIFY HERE
-                switch ($(this).val()) {
-                    case "Standard Bike":
-                        PriceVal = 30;
-                        break;
-                    case "Full Suspension Bike":
-                        PriceVal = 50;
-                        break
-                    case "Electric Bike":
-                        PriceVal = 60;
-                        break;
-                    case "Kids Bike":
-                        PriceVal = 35;
-                        break;
-                }
-                //MODIFY END
-
+                BikeName($(this).val());
             } else {
                 BikeName($(this).val());
-                console.log($(this).val());
-                //MODIFY HERE
-//                switch ($(this).val()) {
-//                    case "Standard Bike":
-//                        PriceVal = 40;
-//                        break;
-//                    case "Full Suspension Bike":
-//                        PriceVal = 75;
-//                        break
-//                    case "Electric Bike":
-//                        PriceVal = 80;
-//                        break;
-//                    case "Kids Bike":
-//                        PriceVal = 35;
-//                        break;
-//                }
-                //MODIFY END
             }
             switch ($("#Extras").val()) {
                 case "":
@@ -471,35 +398,9 @@ $('#AddRider2').click(function(e) {
     $('input[type=radio][name="bikeSelec"]:checked').each(function() {
 
         if (realArray[0].NumOfDays == 0.5) {
-            switch ($(this).val()) {
-                case "Standard Bike":
-                    PriceVal = 30;
-                    break;
-                case "Full Suspension Bike":
-                    PriceVal = 50;
-                    break
-                case "Electric Bike":
-                    PriceVal = 60;
-                    break;
-                case "Kids Bike":
-                    PriceVal = 20;
-                    break;
-            }
+            BikeName($(this).val());
         } else {
-            switch ($(this).val()) {
-                case "Standard Bike":
-                    PriceVal = 40;
-                    break;
-                case "Full Suspension Bike":
-                    PriceVal = 75;
-                    break
-                case "Electric Bike":
-                    PriceVal = 80;
-                    break;
-                case "Kids Bike":
-                    PriceVal = 35;
-                    break;
-            }
+            BikeName($(this).val());
         }
 
         //increment name and height name attribute for multiple entries
@@ -597,35 +498,9 @@ $('#EditRider2').click(function(e) {
                 break;
         }
         if (realArray[0].NumOfDays == 0.5) {
-            switch ($(this).val()) {
-                case "Standard Bike":
-                    PriceVal = 30;
-                    break;
-                case "Full Suspension Bike":
-                    PriceVal = 50;
-                    break
-                    case "Electric Bike":
-                    PriceVal = 60;
-                    break;
-                case "Kids Bike":
-                    PriceVal = 35;
-                    break;
-            }
+            BikeName($(this).val());
         } else {
-            switch ($(this).val()) {
-                case "Standard Bike":
-                    PriceVal = 40;
-                    break;
-                case "Full Suspension Bike":
-                    PriceVal = 75;
-                    break
-                    case "Electric Bike":
-                    PriceVal = 80;
-                    break;
-                case "Kids Bike":
-                    PriceVal = 30;
-                    break;
-            }
+            BikeName($(this).val());
         }
         $(".repeatName").attr('id', "_Name" + count2);
         $(".repeatHeight").attr('id', "_Height" + count2);
@@ -656,35 +531,9 @@ $('#EditRider3').click(function(e) {
         var Ebike = $(this).val();
 
         if (realArray[0].NumOfDays == 0.5) {
-            switch ($(this).val()) {
-                case "Standard Bike":
-                    PriceVal = 30;
-                    break;
-                case "Full Suspension Bike":
-                    PriceVal = 50;
-                    break
-                case "Electric Bike":
-                    PriceVal = 60;
-                    break;
-                case "Kids Bike":
-                    PriceVal = 35;
-                    break;
-            }
+            BikeName($(this).val());
         } else {
-            switch ($(this).val()) {
-                case "Standard Bike":
-                    PriceVal = 40;
-                    break;
-                case "Full Suspension Bike":
-                    PriceVal = 75;
-                    break
-                case "Electric Bike":
-                    PriceVal = 80;
-                    break;
-                case "Kids Bike":
-                    PriceVal = 30;
-                    break;
-            }
+            BikeName($(this).val());
         }
         switch ($("#EExtras").val()) {
             case "":
@@ -1059,15 +908,23 @@ function TotalPrice() {
 }
 
 //New
-
 function BikeName(getBike)
 {
-
-        $.each(BikeData, function (index, data) {
-//            console.log(BikeData);
-            if(data.Name == getBike)
-            {
-               PriceVal = data.Price;
-            }
-        });
+        //console.log(realArray[0].NumOfDays);
+        if (realArray[0].NumOfDays == 0.5) {
+            $.each(BikeData, function (index, data) {
+                //            console.log(BikeData);
+                if (data.Name == getBike) {
+                    PriceVal = data.HPrice;
+                }
+            });
+        } else {
+            $.each(BikeData, function (index, data) {
+                //            console.log(BikeData);
+                if (data.Name == getBike) {
+                    PriceVal = data.Price;
+                }
+            });
+        }
 }
+

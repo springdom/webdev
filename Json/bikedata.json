@@ -2,27 +2,31 @@
     "bikes": [
         {
             "Name": "Standard Bike",
-            "Descr": "Scott or Avanti mountain bike<br>29e r Aluminium alloy frame 27 spd Shimano Alivio or Acera<br>Front suspension fork(sprung) RockShox XC28 or Suntour XCM<br>Hydraulic Disc brake Shimano M395 <br> Weight 15 kg <br>Suits Riders(150 - 200)",
+            "Descr": "Scott or Avanti mountain bike<br>29er Aluminium alloy frame 27 spd Shimano Alivio or Acera<br>Front suspension fork(sprung) RockShox XC28 or Suntour XCM<br>Hydraulic Disc brake Shimano M395<br>Weight 15 kg<br>Suits Riders(150 - 200)",
             "Image": "standardbike.jpg",
-            "Price": "40.00"
+            "Price": "40.00",
+            "HPrice": "30"
         },
         {
             "Name": "Kids Bike",
             "Descr": "Avanti 24” childs bike 3spd internal Alloy V-brake front, Pedal brake rear Suit riders(117 cm - 145 cm)",
             "Image": "kidsbicycle.jpg",
-            "Price": "30.00"
+            "Price": "35.00",
+            "HPrice": "30.00"
         },
         {
             "Name": "Full Suspension Bike",
-            "Descr": "Hammerhead 29er Aluminium alloy frame 2x10spd SRAM X5 X7 groupset Rockshox Pike 140 mm fork Fox CTD Kashima Rear Shock Shimano Deore hydraulic brakes SRAM Roam 30 wheels Weight 14 kg",
+            "Descr": "Hammerhead 29er Aluminium alloy frame<br>2x10spd SRAM X5 X7 groupset<br>Rockshox Pike 140 mm fork<br>Fox CTD Kashima Rear Shock<br>Shimano Deore hydraulic brakes<br>SRAM Roam 30 wheels<br>Weight 14 kg",
             "Image": "fullsuspension.jpg ",
-            "Price": "75.00"
+            "Price": "75.00",
+            "HPrice": "50.00"
         },
         {
             "Name": "Electric Bike ",
-            "Descr": "Pedal and throttle power assist 70-100km battery range Powerful 36V12Ah battery Front rear lights Low step thru frame Charger supplied with multi - day hires ",
+            "Descr": "Pedal and throttle power assist<br>70-100km battery range<br>Powerful 36V12Ah battery<br>Front rear lights Low step thru frame<br>Charger supplied with multi-day hires ",
             "Image": "electricbike.jpg ",
-            "Price": "80.00"
+            "Price": "80.00",
+            "HPrice": "60.00"
         }
     ]
 }
