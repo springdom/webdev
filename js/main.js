@@ -48,7 +48,7 @@ $(document).ready(function() {
     //init popovers
     $(function() {
         $('[data-toggle="popover"]').popover();
-    })
+    });
 });
 
 $(function() {
@@ -61,7 +61,7 @@ $(function() {
     $("#_Time,#_ETime").timepicker({
         minTime: {
             hour: 8,
-            minute: 00,
+            minute:0,
         },
         maxTime: {
             hour: 20,
@@ -95,7 +95,7 @@ $(function() {
 });
 //clear datepicker if not empty
 $("#_Date").change(function() {
-    if ($(this).val() != "") {
+    if ($(this).val() !== "") {
         $("#_Date").datepicker("hide");
     }
 });
@@ -108,7 +108,7 @@ $("[id^=bikeOpt_]").each(function() {
 // console.log(id);
     $(this).click(function() {
         //get bike and show/hide description, and also show border
-            for (i = 0; i < count3; i++)
+            for (var i = 0; i < count3; i++)
             {
                 if(i == id)
                 {
@@ -127,14 +127,12 @@ $("[id^=bikeOpt_]").each(function() {
         $("#NHDinfo").slideDown();
     });
 });
-
+//adds rider to array
 $("#AddRider").click(function() {
 
     var timeVal = currentdate.getHours();
 
-    var dateVal = currentdate.getDate() + "/"
-    + (currentdate.getMonth()+1)  + "/"
-    + currentdate.getFullYear();
+    var dateVal = currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear();
 
     var userDate = $("#_Date").val();
     var usrDate = userDate;
@@ -165,14 +163,14 @@ $("#AddRider").click(function() {
             return false;
         }
     }
-    if(usrDate == "")
+    if(usrDate === "")
     {
         validator.showErrors({
             "_Date": "Please Enter a Date",
         });
         return false;
     }
-    if(usrTime == "")
+    if(usrTime === "")
     {
         validator.showErrors({
             "_Time": "Please Enter a Time",
@@ -203,10 +201,10 @@ $("#AddRider").click(function() {
             'Comments':$("#Comments").val(),
         });
 
-        //get each bike and update price on selec //future:look into this
+        //get each bike and update price on selec
         $('input[type=radio][name="bikeSelec"]:checked').each(function() {
             if (realArray[0].NumOfDays == 0.5) {
-                //get price of bike
+                //get  the bikes price
                 BikeName($(this).val());
             } else {
                 //get price of bike
@@ -215,27 +213,27 @@ $("#AddRider").click(function() {
             switch ($("#Extras").val()) {
                 case "":
                     ExtraVal = 0;
-                    ExtraString = "None"
+                    ExtraString = "None";
                     break;
                 case "PBR":
                     ExtraVal = 10;
-                    ExtraString = "Pannier Bags and Rack"
+                    ExtraString = "Pannier Bags and Rack";
                     break;
                 case "CCBT":
                     ExtraVal = 15;
-                    ExtraString = "Childs Covered Bike Trailer"
+                    ExtraString = "Childs Covered Bike Trailer";
                     break;
                 case "CSFM":
                     ExtraVal = 10;
-                    ExtraString = "Childs Seat Front Mounted"
+                    ExtraString = "Childs Seat Front Mounted";
                     break;
                 case "CSRM":
                     ExtraVal = 10;
-                    ExtraString = "Childs Seat Rear Mounted"
+                    ExtraString = "Childs Seat Rear Mounted";
                     break;
                 case "PEDS":
                     ExtraVal = 5;
-                    ExtraString = "Clip Pedal/ Shimano spds"
+                    ExtraString = "Clip Pedal/ Shimano spds";
                     break;
             }
 
@@ -250,20 +248,19 @@ $("#AddRider").click(function() {
                 'Price': PriceVal,
             });
         });
-        console.log(realArray);
+        //console.log(realArray);
         TotalPrice();
-        populateHandles()
+        populateHandles();
         $("#NHDinfo").remove();
     }
 });
 
+//duplicate to addrider
 $("#AddRiderDone").click(function() {
 
     var timeVal = currentdate.getHours();
 
-    var dateVal = currentdate.getDate() + "/"
-    + (currentdate.getMonth()+1)  + "/"
-    + currentdate.getFullYear();
+    var dateVal = currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear();
 
     var userDate = $("#_Date").val();
     var usrDate = userDate;
@@ -294,14 +291,14 @@ $("#AddRiderDone").click(function() {
             return false;
         }
     }
-    if(usrDate == "")
+    if(usrDate === "")
     {
         validator.showErrors({
             "_Date": "Please Enter a Date",
         });
         return false;
     }
-    if(usrTime == "")
+    if(usrTime === "")
     {
         validator.showErrors({
             "_Time": "Please Enter a Time",
@@ -332,7 +329,7 @@ $("#AddRiderDone").click(function() {
             'Comments':$("#Comments").val(),
         });
 
-        //future:look into this
+
         $('input[type=radio][name="bikeSelec"]:checked').each(function() {
             if (realArray[0].NumOfDays == 0.5) {
                 BikeName($(this).val());
@@ -342,27 +339,27 @@ $("#AddRiderDone").click(function() {
             switch ($("#Extras").val()) {
                 case "":
                     ExtraVal = 0;
-                    ExtraString = "None"
+                    ExtraString = "None";
                     break;
                 case "PBR":
                     ExtraVal = 10;
-                    ExtraString = "Pannier Bags and Rack"
+                    ExtraString = "Pannier Bags and Rack";
                     break;
                 case "CCBT":
                     ExtraVal = 15;
-                    ExtraString = "Childs Covered Bike Trailer"
+                    ExtraString = "Childs Covered Bike Trailer";
                     break;
                 case "CSFM":
                     ExtraVal = 10;
-                    ExtraString = "Childs Seat Front Mounted"
+                    ExtraString = "Childs Seat Front Mounted";
                     break;
                 case "CSRM":
                     ExtraVal = 10;
-                    ExtraString = "Childs Seat Rear Mounted"
+                    ExtraString = "Childs Seat Rear Mounted";
                     break;
                 case "PEDS":
                     ExtraVal = 5;
-                    ExtraString = "Clip Pedal/ Shimano spds"
+                    ExtraString = "Clip Pedal/ Shimano spds";
                     break;
             }
 
@@ -378,7 +375,7 @@ $("#AddRiderDone").click(function() {
         });
         //console.log(realArray);
         TotalPrice();
-        populateHandles()
+        populateHandles();
         $("#NHDinfo").remove();
     }
 });
@@ -408,39 +405,38 @@ $('#AddRider2').click(function(e) {
         $(".repeatHeight").attr('id', "_Height" + count2);
         $(".repeatExtra").attr('id', "_Extras" + count2);
 
-        //future:change to function
-        //FUTURE:Look into constructors
+        //future: change this
         switch ($("#_Extras" + count2).val()) {
             case "":
                 ExtraVal2 = 0;
-                ExtraString2 = "None"
+                ExtraString2 = "None";
                 break;
             case "PBR":
                 ExtraVal2 = 10;
-                ExtraString2 = "Pannier Bags and Rack"
+                ExtraString2 = "Pannier Bags and Rack";
                 break;
             case "CCBT":
                 ExtraVal2 = 15;
-                ExtraString2 = "Childs Covered Bike Trailer"
+                ExtraString2 = "Childs Covered Bike Trailer";
                 break;
             case "CSFM":
                 ExtraVal2 = 10;
-                ExtraString2 = "Childs Seat Front Mounted"
+                ExtraString2 = "Childs Seat Front Mounted";
                 break;
             case "CSRM":
                 ExtraVal2 = 10;
-                ExtraString2 = "Childs Seat Rear Mounted"
+                ExtraString2 = "Childs Seat Rear Mounted";
                 break;
             case "PEDS":
                 ExtraVal2 = 5;
-                ExtraString2 = "Clip Pedal/ Shimano spds"
+                ExtraString2 = "Clip Pedal/ Shimano spds";
                 break;
         }
 
         var NameVal = $("#_Name" + count2).val();
 
         //if the name is empty then default to first name
-        if (NameVal == "") {
+        if (NameVal === "") {
             NameVal = realArray[1].Name;
         }
         realArray.push({
@@ -463,7 +459,7 @@ $('#AddRider2').click(function(e) {
         $('#rID').html(i + 1);
     }
 });
-
+//Edit first rider details
 $('#EditRider2').click(function(e) {
     var SelVal = EditRider,
         Ename = $("#_Ename").val(),
@@ -474,27 +470,27 @@ $('#EditRider2').click(function(e) {
         switch ($("#_Extras").val()) {
             case "":
                 ExtraVal2 = 0;
-                ExtraString2 = "None"
+                ExtraString2 = "None";
                 break;
             case "PBR":
                 ExtraVal2 = 10;
-                ExtraString2 = "Pannier Bags and Rack"
+                ExtraString2 = "Pannier Bags and Rack";
                 break;
             case "CCBT":
                 ExtraVal2 = 15;
-                ExtraString2 = "Childs Covered Bike Trailer"
+                ExtraString2 = "Childs Covered Bike Trailer";
                 break;
             case "CSFM":
                 ExtraVal2 = 10;
-                ExtraString2 = "Childs Seat Front Mounted"
+                ExtraString2 = "Childs Seat Front Mounted";
                 break;
             case "CSRM":
                 ExtraVal2 = 10;
-                ExtraString2 = "Childs Seat Rear Mounted"
+                ExtraString2 = "Childs Seat Rear Mounted";
                 break;
             case "PEDS":
                 ExtraVal2 = 5;
-                ExtraString2 = "Clip Pedal/ Shimano spds"
+                ExtraString2 = "Clip Pedal/ Shimano spds";
                 break;
         }
         if (realArray[0].NumOfDays == 0.5) {
@@ -506,11 +502,11 @@ $('#EditRider2').click(function(e) {
         $(".repeatHeight").attr('id', "_Height" + count2);
         $(".repeatExtra").attr('id', "_Extras" + count2);
 
-        if (Ename == "") {
-            Ename = realArray[1].Name
+        if (Ename === "") {
+            Ename = realArray[1].Name;
         }
         EditDetails(SelVal, Ename, EHeight, Ebike, PriceVal,ExtraString2,ExtraVal2);
-        console.log(ExtraString3,ExtraVal3)
+        //console.log(ExtraString3,ExtraVal3);
     });
     TotalPrice();
     populateHandles(countRider);
@@ -519,7 +515,7 @@ $('#EditRider2').click(function(e) {
 
 var ExtraVal3 = 0;
 var ExtraString3 = "";
-
+//edit populated riders
 $('#EditRider3').click(function(e) {
     var SelVal = 1,
         Ename = $("#_Ename").val(),
@@ -538,31 +534,31 @@ $('#EditRider3').click(function(e) {
         switch ($("#EExtras").val()) {
             case "":
                 ExtraVal2 = 0;
-                ExtraString2 = "None"
+                ExtraString2 = "None";
                 break;
             case "PBR":
                 ExtraVal2 = 10;
-                ExtraString2 = "Pannier Bags and Rack"
+                ExtraString2 = "Pannier Bags and Rack";
                 break;
             case "CCBT":
                 ExtraVal2 = 15;
-                ExtraString2 = "Childs Covered Bike Trailer"
+                ExtraString2 = "Childs Covered Bike Trailer";
                 break;
             case "CSFM":
                 ExtraVal2 = 10;
-                ExtraString2 = "Childs Seat Front Mounted"
+                ExtraString2 = "Childs Seat Front Mounted";
                 break;
             case "CSRM":
                 ExtraVal2 = 10;
-                ExtraString2 = "Childs Seat Rear Mounted"
+                ExtraString2 = "Childs Seat Rear Mounted";
                 break;
             case "PEDS":
                 ExtraVal2 = 5;
-                ExtraString2 = "Clip Pedal/ Shimano spds"
+                ExtraString2 = "Clip Pedal/ Shimano spds";
                 break;
         }
-        if (Ename == "") {
-            Ename = realArray[1].Name
+        if (Ename === "") {
+            Ename = realArray[1].Name;
         }
 
         EditDetails2(SelVal, Ename, EHeight, Ebike, PriceVal, NumDay, ExtraString2, ExtraVal2);
@@ -580,7 +576,6 @@ function EditDetails(i, Newname, Newheight, Newbike, Newprice,EdExtra,EdPrice) {
     realArray[i].Extra2 = EdExtra;
     realArray[i].ExtraPVal = EdPrice;
 }
-
 function EditDetails2(i, Newname, Newheight, Newbike, Newprice, NewDay, NewExtra, NEPrice) {
     realArray[i].Name = Newname;
     realArray[i].Height = Newheight;
@@ -590,13 +585,12 @@ function EditDetails2(i, Newname, Newheight, Newbike, Newprice, NewDay, NewExtra
     realArray[0].Extras = NewExtra;
     realArray[0].ExtrasPrice = NEPrice;
 }
+//edit delivery details
 $('#EditDelivery').click(function(e) {
 
     var timeVal = currentdate.getHours();
 
-    var dateVal = currentdate.getDate() + "/"
-    + (currentdate.getMonth()+1)  + "/"
-    + currentdate.getFullYear();
+    var dateVal = currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear();
 
     var editDate = $("#_EDate").val();
     var edDate = editDate;
@@ -628,14 +622,14 @@ $('#EditDelivery').click(function(e) {
             return false;
         }
     }
-    if(edDate == "")
+    if(edDate === "")
     {
         validator.showErrors({
             "_EDate": "Please Enter a Date",
         });
         return false;
     }
-    if(edTime == "")
+    if(edTime === "")
     {
         validator.showErrors({
             "_ETime": "Please Enter a Time",
@@ -759,7 +753,6 @@ function EditRiderFunct(editnum) {
     EditRider = editnum;
     $('#eID').html(editnum);
 }
-
 function EditRiderFunct1(editnum) {
     $("#EditDelivDetails2 :input").val("");
     $("#RiderAdd").slideUp();
@@ -768,7 +761,6 @@ function EditRiderFunct1(editnum) {
     EditRider = editnum;
     $('#eID2').html(editnum);
 }
-
 //get rider id and remove
 function DelRiderFunct(delnum) {
     var minnum = delnum - 1;
@@ -785,14 +777,13 @@ function DelRiderFunct(delnum) {
         $('#rID').html(i + 1);
     }
 }
-
 //edit delivery details
 function EditDelivFunct() {
     $("#EditDetails").val("");
     $("#RiderAdd").slideUp();
     $("#EditDelivDetails").slideDown();
 }
-
+//todo: modify switch statement
 //populate all height listboxes and update depending on selected bike
 function populateHeight(u) {
     var HeightCount = 0;
@@ -810,21 +801,21 @@ function populateHeight(u) {
                 break;
             case "Full Suspension Bike":
                 HeightCount = 155;
-                for (var i = 0; i < 9; i++) {
+                for (i = 0; i < 9; i++) {
                     HeightCount += 5;
                     Heightoptions += '<option value="' + HeightCount + '">' + HeightCount + 'cm' + '</option>';
                 }
-                break
+                break;
             case "Electric Bike":
                 HeightCount = 155;
-                for (var i = 0; i < 9; i++) {
+                for (i = 0; i < 9; i++) {
                     HeightCount += 5;
                     Heightoptions += '<option value="' + HeightCount + '">' + HeightCount + 'cm' + '</option>';
                 }
                 break;
             case "Kids Bike":
                 HeightCount = 110;
-                for (var i = 0; i < 7; i++) {
+                for (i = 0; i < 7; i++) {
                     HeightCount += 5;
                     Heightoptions += '<option value="' + HeightCount + '">' + HeightCount + 'cm' + '</option>';
                 }
@@ -903,7 +894,7 @@ function TotalPrice() {
         total *= parseInt(totaldays || 0);
     }
 
-    $("#_price").val(total.toFixed(2))
+    $("#_price").val(total.toFixed(2));
     $('#Tprice').html("$" + total.toFixed(2));
 }
 
