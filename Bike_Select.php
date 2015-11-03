@@ -88,15 +88,9 @@ function newBike()
     $json_url = "Json/bikedata.json";
     $json = file_get_contents($json_url);
     $links = json_decode($json, TRUE);
-
-    include '/DBPOP/connect.inc.php';
-    $database = "ibike";
-    $db = mysql_select_db($database, $connection) or die("Couldn't select database");
     
     
     $count1= 0;
-    $selectStatement = "SELECT * FROM bikes";
-    $result = mysql_query($selectStatement) or  die("Couldn't connect:" .mysql_error());
 
     $count= 0;
     $CurBike=0;
