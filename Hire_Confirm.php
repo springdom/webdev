@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once __DIR__ . '/../swipe/config.php';
 if(empty($_SESSION['ConfirmInfo']))
 {
 
@@ -224,6 +225,8 @@ echo("<div class='panel panel-info'>
         description=iBikeDunedin&name={$fName}&email=$email&return_url=http://m.ibikehire.co.nz/final.php&''
         style='border:none; overflow:hidden; width:100%; height:140px; margin-top: 15px;'>
         </iframe>";
+
+
     ?>
         </div>
         <!-- Modal -->

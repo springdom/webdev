@@ -1,23 +1,21 @@
-var realArray = [],
-    htmlArr = [];
+/*jslint browser: true*/ /*global  $*/
+/*jslint browser: true*/ /*global  jQuery*/
+
+var realArray = [];
 
 var ExtraString = "";
 
-var count = 0,
-    count2 = 1,
+var count2 = 1,
     count3 = 2,
     countRider = 0,
-    CurPrice = 0,
     EditRider = 0,
     ExtraVal = 0,
     PriceVal = 0;
 
-var attrs = ['id'];
 var currentdate = new Date();
 
 var url = 'Json/bikedata.json';
 var BikeData;
-var BikePrice;
 
 
 $(document).ready(function() {
@@ -379,11 +377,7 @@ $("#AddRiderDone").click(function() {
         $("#NHDinfo").remove();
     }
 });
-//Divide by 2 on half days
-function halfDay()
-{
-    
-}
+
 var ExtraVal2 = 0;
 var ExtraString2 = "";
 
@@ -506,15 +500,12 @@ $('#EditRider2').click(function(e) {
             Ename = realArray[1].Name;
         }
         EditDetails(SelVal, Ename, EHeight, Ebike, PriceVal,ExtraString2,ExtraVal2);
-        //console.log(ExtraString3,ExtraVal3);
     });
     TotalPrice();
     populateHandles(countRider);
 
 });
 
-var ExtraVal3 = 0;
-var ExtraString3 = "";
 //edit populated riders
 $('#EditRider3').click(function(e) {
     var SelVal = 1,
@@ -884,6 +875,7 @@ $("#Confirm").click(function() {
 //calculations
 function TotalPrice() {
     var total = 0;
+    var totaldays;
     totaldays = realArray[0].NumOfDays;
     for (var i = 0; i < realArray.length; i++) {
         total += parseInt(realArray[i].Price || 0);
