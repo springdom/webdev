@@ -54,6 +54,37 @@ function Redirect($url, $permanent = false)
         require 'PHPMailer/PHPMailerAutoload.php';
         require 'PHPMailer/class.phpmailer.php';
         //require 'mail/emailConf.php';
+
+    function post_to_url($url, $data) {
+     $ch = curl_init ($url);
+     curl_setopt ($ch, CURLOPT_POST, 1);
+     curl_setopt ($ch, CURLOPT_POSTFIELDS, $data);
+     curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+     curl_setopt ($ch, CURLOPT_FOLLOWLOCATION, 1);
+     curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,0);
+     curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,0);
+     $html = curl_exec ($ch);
+     if (curl_errno($ch) !== 0)
+     {
+         curl_close ($ch);
+         return false;
+     }
+     curl_close ($ch);
+     return $html;
+}
+
+$postData = array(
+     "api_key" => "9ddf64d63ad2a93f684f53b6b58ffb22a503e5678338090081d2b2cbb2fb033b",
+     "merchant_id" => "124310DDB2B2D0",
+     "td_item" => "My Product",
+     "td_amount" => 9.95,
+     "td_description" => "Brief description of my product",
+     "td_user_data" => "My Custom Data"
+);
+
+$result = post_to_url("https://api.swipehq.com/createTransactionIdentifier.php", $postData);
+
+    echo $result;
     ?>
     <div class="col-md-12 text-center">
         <h1>Confirm Your Details</h1>
@@ -230,11 +261,11 @@ echo("<div class='panel panel-info'>
 
         //Swipe
         echo"
-        <a class='btn btn-primary' href='http://google.com'>
+        <a class='btn btn-primary' href='https://payment.swipehq.com/?identifier_id=207D2A10B7FDA3'>
         Link
         </a>
         ";
-    ?>
+            ?>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -267,6 +298,7 @@ echo("<div class='panel panel-info'>
         <a href="index.html" data-icon="home" data-theme="d" class="btn btn-default btn-lg" rel="external"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Return Home</a>
     </div>
 </body>
+
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

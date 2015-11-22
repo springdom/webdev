@@ -1,0 +1,4 @@
+https://api.swipehq.com/createTransactionIdentifier.php?api_key=9ddf64d63ad2a93f684f53b6b58ffb22a503e5678338090081d2b2cbb2fb033b&merchant_id=124310DDB2B2D0&td_item=your_product&td_currency=aud&td_description=brief_description_of_product&td_amount=9.95&td_default_quantity=10&td_user_data=some_data&td_duration=3600
+
+
+https://api.swipehq.com/createTransactionIdentifier.php?api_key=9ddf64d63ad2a93f684f53b6b58ffb22a503e5678338090081d2b2cbb2fb033b&merchant_id=124310DDB2B2D0&td_item=BikeHiret&td_currency=nzd&td_description=bicyclehire&td_amount=10&td_default_quantity=10&td_user_data=some_data&td_duration=3600
