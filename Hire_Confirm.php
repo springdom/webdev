@@ -1,6 +1,6 @@
 <?php
-session_start();
-require_once __DIR__ . '/../swipe/config.php';
+//session_start();
+require_once __DIR__ . '/swipe/config.php';
 if(empty($_SESSION['ConfirmInfo']))
 {
 
@@ -53,7 +53,7 @@ function Redirect($url, $permanent = false)
     <?php
         require 'PHPMailer/PHPMailerAutoload.php';
         require 'PHPMailer/class.phpmailer.php';
-        require 'mail/emailConf.php';
+        //require 'mail/emailConf.php';
     ?>
     <div class="col-md-12 text-center">
         <h1>Confirm Your Details</h1>
@@ -68,7 +68,7 @@ function Redirect($url, $permanent = false)
     $_SESSION['email'] = $_POST['_Demail'];
     $_SESSION['mobile'] = $_POST['_Dmobile'];
     $_SESSION['price'] = $_POST['_price'];
-    $_SESSION['Comments'] = $_POST['Comments'];
+    //$_SESSION['Comments'] = $_POST['Comments'];
     $_SESSION['url'] = 0;
 
     echo ("<div class='col-md-4'><p>Name<br>$_POST[_Dname]</p></div>");
@@ -221,12 +221,19 @@ echo("<div class='panel panel-info'>
             $email = $_POST[_Demail];
            $mobile = $_POST[_Dmobile];
 
+
+        //KiwiPay
         echo"<iframe id='ray' src='http://kiwipay.harmonyapp.com/iframe/?merchant=ibikehire&price={$finalCalc}&
         description=iBikeDunedin&name={$fName}&email=$email&return_url=http://m.ibikehire.co.nz/final.php&''
         style='border:none; overflow:hidden; width:100%; height:140px; margin-top: 15px;'>
         </iframe>";
 
-
+        //Swipe
+        echo"
+        <a class='btn btn-primary' href='http://google.com'>
+        Link
+        </a>
+        ";
     ?>
         </div>
         <!-- Modal -->
