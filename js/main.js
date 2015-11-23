@@ -790,6 +790,13 @@ function populateHeight(u) {
                     Heightoptions += '<option value="' + HeightCount + '">' + HeightCount + 'cm' + '</option>';
                 }
                 break;
+            case "Premium Bike":
+                HeightCount = 145;
+                for (var i = 0; i < 11; i++) {
+                    HeightCount += 5;
+                    Heightoptions += '<option value="' + HeightCount + '">' + HeightCount + 'cm' + '</option>';
+                }
+                break;
             case "Full Suspension Bike":
                 HeightCount = 155;
                 for (i = 0; i < 9; i++) {

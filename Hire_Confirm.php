@@ -1,6 +1,6 @@
 <?php
-//session_start();
-require_once __DIR__ . '/swipe/config.php';
+session_start();
+//require_once __DIR__ . '/swipe/config.php';
 if(empty($_SESSION['ConfirmInfo']))
 {
 
@@ -53,7 +53,7 @@ function Redirect($url, $permanent = false)
     <?php
         require 'PHPMailer/PHPMailerAutoload.php';
         require 'PHPMailer/class.phpmailer.php';
-        //require 'mail/emailConf.php';
+       //require 'mail/emailConf.php';
     ?>
     <div class="col-md-12 text-center">
         <h1>Confirm Your Details</h1>
