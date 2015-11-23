@@ -94,14 +94,16 @@ function newBike()
 
     $count= 0;
     $CurBike=0;
+    $i=0;
 
-    echo ("<form id='form' class='row form-inline top-buffer' role='form'>
-        <div id='MainBikes'>");
+    echo ("<form id='form' class='form-inline top-buffer' role='form'>
+        <div id='MainBikes class='row'>");
      foreach($links['bikes'] as $key=>$val)
     {
         $count1++;
 
         echo ("<div class='col-md-3'>
+
     <div class='bikeContent' id='bikeContent_{$count1}'>
     <label id='bikeOpt2_{$count1}'  class='bikeOpt2'>
     <input type='radio' id='bikeOpt_{$count1}'  value='". $val['Name'] ."' name='bikeSelec' class='BikeInput img-rounded'>
@@ -111,16 +113,27 @@ function newBike()
     <div class='bikeName'><h5><u><b>" . $val['Name'] . " $" .$val['Price'] . "/day</b></u></h5></div>");
     echo ("<div class='descrp' id='description_{$count1}'><small>" . $val['Descr'] . "</small></div>
     </div>");
+
+         $i++;
+         if ($i%4 == 0)
+         {
+
+             echo '<div class="clearfix"></div></div><div class="row">';
+         }
     }
     echo ("</div>
     </form>");
-}
+}?>
+
+
+<?php
 function runBike()
 {
     newBike();
 }
 runBike();
 ?>
+<!--        <div id="section" class="col-md-12 row"></div>-->
         <div id="NHDinfo" class="top-buffer">
             <form autocomplete="off" id="Maininfo" class="" role="form">
                 <div class="row">

@@ -60,32 +60,31 @@ img {
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
 }
-#bgStyling {
+/* #bgStyling {
     padding-top: 20px;
-    background-color: #0F7596;
-    padding-left: 20px;
+/*     background-color: #0F7596; */
+/*     padding-left: 20px;
     padding-right: 20px;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
     margin-top: 0px;
-}
-#RiderAdd {
-    background-color: #00ABE3;
+} */
+/* #RiderAdd {
     margin-left: 26.5%;
     margin-right: 26%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     padding-left: 20px;
     padding-right: 20px;
-}
-#log {
+} */
+/* #log {
     border-bottom: 4px solid;
     border-top: 4px solid;
     padding-bottom: 10px;
-}
-#Delivlog {
-    border-bottom: 4px solid;
-}
+} */
+/* #Delivlog {
+    /*! border-bottom: 4px solid; */
+} */
 #ModImg {
     position: absolute;
     left: -11%;
