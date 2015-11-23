@@ -102,8 +102,10 @@ function newBike()
     {
         $count1++;
 
-        echo ("<div class='col-md-3'>
 
+         if($count1 < 2)
+         {
+             echo ("<div class='col-md-3'>
     <div class='bikeContent' id='bikeContent_{$count1}'>
     <label id='bikeOpt2_{$count1}'  class='bikeOpt2'>
     <input type='radio' id='bikeOpt_{$count1}'  value='". $val['Name'] ."' name='bikeSelec' class='BikeInput img-rounded'>
@@ -113,6 +115,19 @@ function newBike()
     <div class='bikeName'><h5><u><b>" . $val['Name'] . " $" .$val['Price'] . "/day</b></u></h5></div>");
     echo ("<div class='descrp' id='description_{$count1}'><small>" . $val['Descr'] . "</small></div>
     </div>");
+         }
+         else{
+                     echo ("<div class='col-md-3'>
+    <div class='bikeContent' id='bikeContent_{$count1}'>
+    <label id='bikeOpt2_{$count1}'  class='bikeOpt2'>
+    <input type='radio' id='bikeOpt_{$count1}'  value='". $val['Name'] ."' name='bikeSelec' class='BikeInput img-rounded'>
+    <img src=images/". $val['Image'] . " width='200' alt='" . $val['Name'] . "'>
+    </label>
+    </div>
+    <div class='bikeName'><h5><u><b>" . $val['Name'] . " $" .$val['Price'] . "/day</b></u></h5></div>");
+    echo ("<div class='descrp descr2' id='description_{$count1}'><small>" . $val['Descr'] . "</small></div>
+    </div>");
+         }
 
          $i++;
          if ($i%4 == 0)
@@ -136,7 +151,7 @@ runBike();
 <!--        <div id="section" class="col-md-12 row"></div>-->
         <div id="NHDinfo" class="top-buffer">
             <form autocomplete="off" id="Maininfo" class="" role="form">
-                <div class="row">
+                <div class="row top-buffer">
                     <div class="col-md-4 form-group">
                         <label class="control-label" for="_Name00">Rider:</label>
                         <input type="text" class="activeInput form-control" id="_Name00" name="_Name00" placeholder="Enter Name"  required>
@@ -164,7 +179,7 @@ runBike();
                         </a>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row top-buffer">
                 <div class="col-md-3 form-group">
                     <label class="control-label" for="NumDays">Days:</label>
                     <select class="activeInput form-control" id ='NumDays' name="NumDays">
@@ -203,7 +218,7 @@ runBike();
                     </a>
                 </div>
                 </div>
-                <div class="row">
+                <div class="row top-buffer">
                     <div class="col-md-4 col-md-offset-4 form-group">
                         <label class="control-label" for="_Daddress">Additional Comments (Optional):</label>
                         <textarea rows="2" cols="20" class="form-control" id="Comments" name="Comments" placeholder="Add Any Additional Comments">
@@ -211,7 +226,7 @@ runBike();
                         </textarea>
                     </div>
                 </div>
-                    <div class="row form-group">
+                    <div class="row top-buffer form-group">
                         <button type="button" class="addRider btn btn-primary" id="AddRider">
                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Rider</button>
 

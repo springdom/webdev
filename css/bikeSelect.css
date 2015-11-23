@@ -100,7 +100,9 @@ label img{
     text-align: justify;
     margin-left: 21%;
 }
-
+.descr2{
+    font-size: 115%;
+}
 .error {
     color: red !important;
     display: block;
