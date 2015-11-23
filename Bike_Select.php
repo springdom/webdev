@@ -181,7 +181,7 @@ runBike();
                 </div>
                 <div class="row top-buffer">
                 <div class="col-md-3 form-group">
-                    <label class="control-label" for="NumDays">Days:</label>
+                    <label class="control-label col-md-12" for="NumDays">Days:</label>
                     <select class="activeInput form-control" id ='NumDays' name="NumDays">
                         <option value='0.5'>4 hours</option>
                         <option value='1'>1 day</option>
@@ -204,7 +204,7 @@ runBike();
                         </a>
                     </div>
                     <div class="col-md-3 form-group">
-                    <label class="control-label" for="_Date">Start Date:</label>
+                    <label class="control-label col-md-12" for="_Date">Start Date:</label>
                         <input type="text" class="activeInput form-control" id="_Date" name="_Date" placeholder="Enter Delivery Date" required readonly>
                         <a class="popa" tabindex="0" data-trigger="focus" data-toggle="popover" data-placement="right" data-content="The first day of your hire">
                             <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
@@ -399,7 +399,7 @@ runBike();
                 <h4 id="Tprice"><!--Price--></h4>
             </div>
         </div>
-        <form autocomplete="off" id='formDetails2'  class ="row" role="form" action='Hire_Confirm.php' method='post'>
+        <form autocomplete="off" id='formDetails2'  class ="row top-buffer" role="form" action='Hire_Confirm.php' method='post'>
                 <div class="form-group col-md-12">
                     <button type="button" name="button" id="Confirm" class="btn btn-success btn-lg" disabled>Submit</button>
                     </div>
