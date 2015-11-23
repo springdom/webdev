@@ -118,7 +118,7 @@ if(isset($_POST['submit'])&&
     $finalCalc=sprintf("%.2f", $finalCalc);
     $_SESSION['final']=$finalCalc;
 
-    //sendMail();
+    sendMail();
 
 //confirmation Details
 echo"<form action='final.php' method='POST'>";
