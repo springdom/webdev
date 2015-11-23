@@ -96,12 +96,10 @@ function newBike()
     $CurBike=0;
 
     echo ("<form id='form' class='row form-inline top-buffer' role='form'>
-        <div id='MainBikes>");
+        <div id='MainBikes'>");
      foreach($links['bikes'] as $key=>$val)
     {
         $count1++;
-         if($count1 <= 4)
-         {
 
         echo ("<div class='col-md-3'>
     <div class='bikeContent' id='bikeContent_{$count1}'>
@@ -113,23 +111,6 @@ function newBike()
     <div class='bikeName'><h5><u><b>" . $val['Name'] . " $" .$val['Price'] . "/day</b></u></h5></div>");
     echo ("<div class='descrp' id='description_{$count1}'><small>" . $val['Descr'] . "</small></div>
     </div>");
-         }
-         else
-         {
-             echo "<div class=row>";
-        echo ("<div class='col-md-3'>
-        <div class='bikeContent' id='bikeContent_{$count1}'>
-    <label id='bikeOpt2_{$count1}'  class='bikeOpt2'>
-    <input type='radio' id='bikeOpt_{$count1}'  value='". $val['Name'] ."' name='bikeSelec' class='BikeInput img-rounded'>
-    <img src=images/". $val['Image'] . " width='200' alt='" . $val['Name'] . "'>
-    </label>
-    </div>
-    <div class='bikeName'><h5><u><b>" . $val['Name'] . " $" .$val['Price'] . "/day</b></u></h5></div>");
-    echo ("<div class='descrp' id='description_{$count1}'><small>" . $val['Descr'] . "</small></div>
-    </div>");
-             echo"</div>";
-
-         }
     }
     echo ("</div>
     </form>");
