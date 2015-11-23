@@ -54,37 +54,6 @@ function Redirect($url, $permanent = false)
         require 'PHPMailer/PHPMailerAutoload.php';
         require 'PHPMailer/class.phpmailer.php';
         //require 'mail/emailConf.php';
-
-    function post_to_url($url, $data) {
-     $ch = curl_init ($url);
-     curl_setopt ($ch, CURLOPT_POST, 1);
-     curl_setopt ($ch, CURLOPT_POSTFIELDS, $data);
-     curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
-     curl_setopt ($ch, CURLOPT_FOLLOWLOCATION, 1);
-     curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,0);
-     curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,0);
-     $html = curl_exec ($ch);
-     if (curl_errno($ch) !== 0)
-     {
-         curl_close ($ch);
-         return false;
-     }
-     curl_close ($ch);
-     return $html;
-}
-
-$postData = array(
-     "api_key" => "9ddf64d63ad2a93f684f53b6b58ffb22a503e5678338090081d2b2cbb2fb033b",
-     "merchant_id" => "124310DDB2B2D0",
-     "td_item" => "My Product",
-     "td_amount" => 9.95,
-     "td_description" => "Brief description of my product",
-     "td_user_data" => "My Custom Data"
-);
-
-$result = post_to_url("https://api.swipehq.com/createTransactionIdentifier.php", $postData);
-
-    echo $result;
     ?>
     <div class="col-md-12 text-center">
         <h1>Confirm Your Details</h1>
@@ -252,20 +221,49 @@ echo("<div class='panel panel-info'>
             $email = $_POST[_Demail];
            $mobile = $_POST[_Dmobile];
 
-
-        //KiwiPay
-        echo"<iframe id='ray' src='http://kiwipay.harmonyapp.com/iframe/?merchant=ibikehire&price={$finalCalc}&
-        description=iBikeDunedin&name={$fName}&email=$email&return_url=http://m.ibikehire.co.nz/final.php&''
-        style='border:none; overflow:hidden; width:100%; height:140px; margin-top: 15px;'>
-        </iframe>";
-
         //Swipe
-        echo"
-        <a class='btn btn-primary' href='https://payment.swipehq.com/?identifier_id=207D2A10B7FDA3'>
-        Link
-        </a>
-        ";
+        function post_to_url($url, $data) {
+        $ch = curl_init ($url);
+        curl_setopt ($ch, CURLOPT_POST, 1);
+        curl_setopt ($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt ($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,0);
+        curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,0);
+        $html = curl_exec ($ch);
+        if (curl_errno($ch) !== 0)
+        {
+         curl_close ($ch);
+         return false;
+        }
+        curl_close ($ch);
+        return $html;
+        }
+
+    $postData = array(
+     "api_key" => "9ddf64d63ad2a93f684f53b6b58ffb22a503e5678338090081d2b2cbb2fb033b",
+     "merchant_id" => "124310DDB2B2D0",
+     "td_user_data"=>"$_POST[_Dname]",
+     "td_email"=>"$_POST[_Demail]",
+     "td_phone"=>"$_POST[_Dmobile]",
+     "td_item" => "Bike Hire",
+     "td_amount" => $_POST[_price],
+     "td_description" => "Brief description of my product",
+     );
+
+    $result = post_to_url("https://api.swipehq.com/createTransactionIdentifier.php", $postData);
+
+    $test = json_decode($result,true);
+    $test = array_values($test);
+    //print_r($test[2]['identifier']);
+
             ?>
+
+            <div id="SwipeButton" class="col-md-12 row text-center" style="padding: 52px;">
+        <a class='btn btn-primary btn-lg' href='https://payment.swipehq.com/?identifier_id=<?php print_r($test[2]['identifier']); ?>'>
+        Make Payment
+        </a>
+                </div>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
