@@ -50,6 +50,7 @@ function Redirect($url, $permanent = false)
             </ul>
         </div>
     </div><!-- /header -->
+<!--Mailing-->
     <?php
         require 'PHPMailer/PHPMailerAutoload.php';
         require 'PHPMailer/class.phpmailer.php';
