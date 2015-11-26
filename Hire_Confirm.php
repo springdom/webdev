@@ -54,7 +54,7 @@ function Redirect($url, $permanent = false)
     <?php
         require 'PHPMailer/PHPMailerAutoload.php';
         require 'PHPMailer/class.phpmailer.php';
-        //require 'mail/emailConf.php';
+        require 'mail/emailConf.php';
     ?>
     <div class="col-md-12 text-center">
         <h1>Confirm Your Details</h1>
@@ -207,6 +207,7 @@ echo("<div class='panel panel-info'>
         }
         ?>
     </div>
+
         <div class ="row">
             <div id="PriceTot" class="alert alert-info col-md-2 col-md-offset-5 text-center">
                 <h4>Total Price</h4>
