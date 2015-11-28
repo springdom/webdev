@@ -388,11 +388,8 @@ $('#AddRider2').click(function(e) {
 
     $('input[type=radio][name="bikeSelec"]:checked').each(function() {
 
-        if (realArray[0].NumOfDays == 0.5) {
-            BikeName($(this).val());
-        } else {
-            BikeName($(this).val());
-        }
+
+        BikeName($(this).val());
 
         //increment name and height name attribute for multiple entries
         $(".repeatName").attr('id', "_Name" + count2);
@@ -774,6 +771,9 @@ function EditDelivFunct() {
     $("#RiderAdd").slideUp();
     $("#EditDelivDetails").slideDown();
 }
+
+var minH = 0;
+var maxH = 0;
 //todo: modify switch statement
 //populate all height listboxes and update depending on selected bike
 function populateHeight(u) {
@@ -782,43 +782,17 @@ function populateHeight(u) {
 
     //console.log($('input[type=radio][name="bikeSelec"]:checked'));
     $('input[type=radio][name="bikeSelec"]:checked').each(function() {
-        switch ($(this).val()) {
-            case "Standard Bike":
-                HeightCount = 145;
-                for (var i = 0; i < 11; i++) {
-                    HeightCount += 5;
-                    Heightoptions += '<option value="' + HeightCount + '">' + HeightCount + 'cm' + '</option>';
+
+        BikeHeight($(this).val());
+        if($(this).val())
+            {
+
+                while (minH < maxH) {
+                    minH += 5;
+                    Heightoptions += '<option value="' + minH + '">' + minH + 'cm' + '</option>';
                 }
-                break;
-            case "Premium Bike":
-                HeightCount = 145;
-                for (var i = 0; i < 11; i++) {
-                    HeightCount += 5;
-                    Heightoptions += '<option value="' + HeightCount + '">' + HeightCount + 'cm' + '</option>';
-                }
-                break;
-            case "Full Suspension Bike":
-                HeightCount = 155;
-                for (i = 0; i < 9; i++) {
-                    HeightCount += 5;
-                    Heightoptions += '<option value="' + HeightCount + '">' + HeightCount + 'cm' + '</option>';
-                }
-                break;
-            case "Electric Bike":
-                HeightCount = 155;
-                for (i = 0; i < 9; i++) {
-                    HeightCount += 5;
-                    Heightoptions += '<option value="' + HeightCount + '">' + HeightCount + 'cm' + '</option>';
-                }
-                break;
-            case "Kids Bike":
-                HeightCount = 110;
-                for (i = 0; i < 7; i++) {
-                    HeightCount += 5;
-                    Heightoptions += '<option value="' + HeightCount + '">' + HeightCount + 'cm' + '</option>';
-                }
-                break;
-        }
+
+            }
     });
 
     $('#_Height00,#_Height1,#_Eheight,#_Eheight200').html(Heightoptions);
@@ -900,6 +874,9 @@ function TotalPrice() {
 //New
 function BikeName(getBike)
 {
+
+    //get price for selected bike
+
         //console.log(realArray[0].NumOfDays);
         if (realArray[0].NumOfDays == 0.5) {
             $.each(BikeData, function (index, data) {
@@ -916,5 +893,18 @@ function BikeName(getBike)
                 }
             });
         }
+}
+function BikeHeight(getBike)
+{
+
+        $.each(BikeData, function(index, data)
+        {
+            if(data.Name == getBike)
+                {
+                 minH = parseInt(data.minHeight) - 5;
+                 maxH = parseInt(data.maxHeight);
+
+                }
+        });
 }
 
